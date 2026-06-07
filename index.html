@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secret Garden Love Letter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="soft-light"></div>
+  <div id="petalLayer" class="petal-layer"></div>
+  <div id="butterflyLayer" class="butterfly-layer"></div>
+
+  <audio id="bgMusic" loop preload="auto"></audio>
+
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music">
+    <span>♪</span>
+    <b>Musik</b>
+  </button>
+
+  <main class="app">
+    <section id="gateScreen" class="screen gate-screen active">
+      <div class="moon"></div>
+      <div class="gate-card">
+        <p class="eyebrow">Secret Garden</p>
+        <h1 id="siteTitle">Secret Garden Love Letter</h1>
+        <p id="siteSubtitle" class="subtitle">Sebuah taman rahasia yang cuma terbuka untuk kamu</p>
+
+        <div id="gardenGate" class="garden-gate" aria-label="Gerbang taman terkunci">
+          <div class="gate-arch"></div>
+          <div class="gate-door gate-left">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="gate-door gate-right">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="lock-badge">
+            <div class="lock-shackle"></div>
+            <div class="lock-heart">♥</div>
+          </div>
+        </div>
+
+        <div class="pin-box">
+          <label for="pinInput">Masukkan PIN rahasia</label>
+          <div class="pin-row">
+            <input id="pinInput" type="password" maxlength="8" placeholder="••••" inputmode="numeric" />
+            <button id="unlockBtn">Buka Gerbang</button>
+          </div>
+          <p id="pinMessage" class="pin-message"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gardenScreen" class="screen garden-screen">
+      <div class="garden-depth depth-1"></div>
+      <div class="garden-depth depth-2"></div>
+      <div class="garden-content">
+        <p class="eyebrow">Welcome to</p>
+        <h2>Taman Rahasia Kita</h2>
+        <p class="garden-text">Bunga-bunga bermekaran, kupu-kupu menari, dan ada sebuah amplop emas di tengah taman.</p>
+
+        <div id="goldEnvelope" class="gold-envelope" role="button" tabindex="0" aria-label="Buka amplop emas">
+          <div class="env-back"></div>
+          <div class="env-letter-preview">Untukmu</div>
+          <div class="env-front"></div>
+          <div class="env-flap"></div>
+          <div class="env-glow"></div>
+        </div>
+        <button id="openEnvelopeBtn" class="primary-btn">Buka Amplop Emas</button>
+      </div>
+    </section>
+
+    <section id="letterScreen" class="screen letter-screen">
+      <div class="letter-wrap">
+        <div class="paper">
+          <p class="eyebrow">Golden Letter</p>
+          <h2 id="recipientName">Kamu yang paling istimewa</h2>
+          <div id="typedLetter" class="typed-letter"></div>
+          <p id="senderName" class="sender"></p>
+        </div>
+        <button id="skipBtn" class="ghost-btn">Selesaikan Surat</button>
+        <button id="galleryBtn" class="primary-btn hidden">Lihat Galeri Bunga</button>
+      </div>
+    </section>
+
+    <section id="galleryScreen" class="screen gallery-screen">
+      <div class="gallery-header">
+        <p class="eyebrow">Blooming Memories</p>
+        <h2>Galeri Foto Bunga Mekar</h2>
+        <p>Tekan setiap bunga untuk melihat kenangan di dalamnya.</p>
+      </div>
+      <div id="flowerGallery" class="flower-gallery"></div>
+    </section>
+  </main>
+
+  <div id="photoModal" class="photo-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button id="closeModal" class="close-modal">×</button>
+      <img id="modalImg" src="" alt="Foto kenangan" />
+      <p id="modalCaption"></p>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
